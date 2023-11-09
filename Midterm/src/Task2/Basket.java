@@ -5,7 +5,7 @@ import Task2.Goods.Item;
 import java.util.Arrays;
 
 public class Basket {
-    public SelectedItem[] items;
+    private SelectedItem[] items;
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
     public Basket() {
@@ -19,11 +19,10 @@ public class Basket {
         ++size;
     }
     public SelectedItem[] getItems() {
-        return Arrays.copyOf(items, items.length);  // shallow copy!
+        return Arrays.copyOf(items, size);  // shallow copy!
     }
 
     private SelectedItem[] grow() {
         return Arrays.copyOf(items, items.length * 2);
     }
-
 }

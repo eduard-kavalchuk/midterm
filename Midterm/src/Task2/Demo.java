@@ -11,17 +11,29 @@ public class Demo {
         Item regularItem = new RegularItem("RegularItem1", 1.23);
         Item saleItem = new SaleItem("SaleItem1", 2.34, 25);
         Item discountItem = new DiscountItem(
-                "DiscountItem",
+                "DiscountItem1",
                 3.45,
                 30,
                 "Гнилые бананы"
         );
-        
+
         store.addItem(regularItem);
+        store.addItem(saleItem);
+        store.addItem(discountItem);
 
-
+        System.out.println("Список товаров в магазине:");
         for (Item item : store.getItems())
             System.out.println(item.toString());
+
+        Basket basket = store.getBasket();
+        basket.addItem(regularItem, 2);
+        basket.addItem(saleItem, 3);
+        basket.addItem(discountItem, 4);
+
+        System.out.println("\nСписок товаров в корзине:");
+        for (SelectedItem item : basket.getItems())
+            System.out.println(item.item.toString() + ", Кол-во - " + item.quantity);
+
 
     }
 }
