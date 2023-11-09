@@ -34,6 +34,8 @@ public class Demo {
         for (SelectedItem item : basket.getItems())
             System.out.println(item.item.toString() + ", Кол-во - " + item.quantity);
 
-
+        Check check = store.getCheck(basket);
+        System.out.println("\nЧек:");
+        System.out.println(check.toString());
     }
 }

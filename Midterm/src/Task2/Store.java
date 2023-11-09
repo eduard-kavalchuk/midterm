@@ -39,7 +39,7 @@ public class Store {
         for (SelectedItem selectedItem : basket.getItems()) {
             name = selectedItem.item.toString();
             itemTotal = selectedItem.item.getPrice() * selectedItem.quantity;
-            record = name + ", Количество - " + selectedItem.quantity + ", Сумма - " + itemTotal;
+            record = name + ", Количество - " + selectedItem.quantity + ", Сумма - " + itemTotal + "\n";
             purchases[itemNumber++] = record;
             total += itemTotal;
         }

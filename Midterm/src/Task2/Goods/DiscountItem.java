@@ -10,7 +10,7 @@ public class DiscountItem extends Item {
     }
 
     public double getPrice() {
-        return price * discountInPercents / 100;
+        return price * (1 - discountInPercents / 100);
     }
 
     @Override
