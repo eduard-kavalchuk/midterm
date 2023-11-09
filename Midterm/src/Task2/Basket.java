@@ -5,7 +5,7 @@ import Task2.Goods.Item;
 import java.util.Arrays;
 
 public class Basket {
-    private SelectedItem[] items;
+    public SelectedItem[] items;
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
     public Basket() {
