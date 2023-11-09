@@ -6,6 +6,10 @@ public class SaleItem extends Item {
         super(name, price);
         this.discountInPercents = discountInPercents;
     }
+    @Override
+    public double getPrice() {
+        return price * discountInPercents / 100;
+    }
 
     @Override
     public String toString() {

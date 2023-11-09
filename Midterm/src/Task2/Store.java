@@ -5,7 +5,7 @@ import Task2.Goods.Item;
 import java.util.Arrays;
 
 public class Store {
-    public Item[] items;
+    private Item[] items;
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
     public Store() {
@@ -15,7 +15,7 @@ public class Store {
         return new Basket();
     }
     public Item[] getItems() {
-        return Arrays.copyOf(items, items.length);  // shallow copy!
+        return Arrays.copyOf(items, size);  // shallow copy!
     }
     public void addItem(Item item) {
         if (size == items.length) {
@@ -38,7 +38,7 @@ public class Store {
 
         for (SelectedItem selectedItem : basket.getItems()) {
             name = selectedItem.item.toString();
-            itemTotal = selectedItem.item.price * selectedItem.quantity;
+            itemTotal = selectedItem.item.getPrice() * selectedItem.quantity;
             record = name + ", Количество - " + selectedItem.quantity + ", Сумма - " + itemTotal;
             purchases[itemNumber++] = record;
             total += itemTotal;

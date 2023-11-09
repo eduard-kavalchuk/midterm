@@ -9,6 +9,10 @@ public class DiscountItem extends Item {
         this.discountReason = discountReason;
     }
 
+    public double getPrice() {
+        return price * discountInPercents / 100;
+    }
+
     @Override
     public String toString() {
         return name + ", Цена - " + price + " Скидка - " + discountInPercents + "%, Уценка - " + discountReason;

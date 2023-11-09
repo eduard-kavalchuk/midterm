@@ -12,4 +12,5 @@ public abstract class Item {
         this.price = price;
     }
     public abstract String toString();
+    public abstract double getPrice();
 }

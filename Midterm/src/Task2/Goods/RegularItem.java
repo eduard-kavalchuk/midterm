@@ -8,4 +8,8 @@ public class RegularItem extends Item {
     public String toString() {
         return name + ", Цена - " + price;
     }
+    @Override
+    public double getPrice() {
+        return price;
+    }
 }
